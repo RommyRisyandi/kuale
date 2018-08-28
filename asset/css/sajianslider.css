@@ -1,0 +1,22 @@
+.card{position: relative;
+	border: none;
+}
+
+
+.card img:hover{opacity: .8; transition: .5s;}
+.card-body{margin: 0; padding: 0; text-align: center;}
+.card:after{
+	content: "\f0f5";
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	font-family: 'fontAwesome';
+	font-size: 25px;
+	color: green;
+	transition: .5s;
+	opacity: .5;
+
+}
+.card:hover:after{
+	opacity: .9;
+}
