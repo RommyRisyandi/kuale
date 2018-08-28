@@ -154,7 +154,7 @@ $total +=$r->subtotal;
      <?php 
           
       foreach ($data as $row => $r)
-      for($i=1;$i<2;$i++) 
+      
       {
       
      ?>
@@ -171,9 +171,7 @@ $total +=$r->subtotal;
       <td><input type="text" name="subtotal" id="subtotal" class="subtotal" readonly></td>
       <td><a href="<?php echo base_url('admin/apesan') ?>"><button type="submit">Masukkan</button></td></tr>
    <?php echo form_close();; ?>
- <?php 
-
-} ?>
+ <?php } ?>
  
    
 
@@ -211,11 +209,7 @@ $total +=$r->subtotal;
       <td id="subtotal" class="subtotal" onkeyup="total()">Rp.<?php echo $r->subtotal; ?></td>
       <td><a href="<?php echo site_url('admin/hapus2/').$r->id_menu?>"
             onClick="return confirm('apakah anda yakin ingin menghapus pesanan?')"><button>Hapus</button></a></td></tr>
-       <?php
-        $total +=$r->subtotal; 
-     }
-      
-        ?>
+       <?php $total +=$r->subtotal; } ?>
 
        <tr style="font-weight: bold;"><td colspan="3"></td><td>Total :</td><td id="total1" name="total1" class="total1">Rp.<?php echo $total; ?></td></tr>
        
