@@ -125,7 +125,7 @@ $total +=$r->subtotal;
 <td><input type="date" name="tgl_order" id="tgl_order"></td>
 <td><input type="text" name="total" class="subtotal_val" value="<?=$total ;?>" readonly></td>
 <td><button type="submit" onClick="return confirm('apakah anda sudah selesai menginput menu?')">Selesai</button></td></tr>
-<?php echo form_close();; ?>
+<?php echo form_close(); ?>
 
 <h4></h4>
 </tbody></table><br/>
@@ -161,7 +161,7 @@ $total +=$r->subtotal;
 
      
   <tr>
-    <?php echo form_open_multipart('admin/apesan'); ?>
+    <?php echo form_open('admin/apesan'); ?>
       
       <td><input type="text" name="id_menu" value="<?php echo $r->id_menu?>" readonly></td>
       <td><input type="text" name="nama_pesanan" value="<?php echo $r->nama_menu?>" readonly></td>
@@ -170,7 +170,7 @@ $total +=$r->subtotal;
       <td><input type="number" name="jml_porsi" id="jml_porsi" class="jml_porsi" onkeyup="hitung()"></td>
       <td><input type="text" name="subtotal" id="subtotal" class="subtotal" readonly></td>
       <td><a href="<?php echo base_url('admin/apesan') ?>"><button type="submit">Masukkan</button></td></tr>
-   <?php echo form_close();; ?>
+   <?php echo form_close(); ?>
  <?php } ?>
  
    
@@ -211,7 +211,7 @@ $total +=$r->subtotal;
             onClick="return confirm('apakah anda yakin ingin menghapus pesanan?')"><button>Hapus</button></a></td></tr>
        <?php $total +=$r->subtotal; } ?>
 
-       <tr style="font-weight: bold;"><td colspan="3"></td><td>Total :</td><td id="total1" name="total1" class="total1">Rp.<?php echo $total; ?></td></tr>
+       <tr style="font-weight: bold;"><td colspan="3"></td><td>Total :</td><td id="total" name="total" class="total">Rp.<?php echo $total; ?></td></tr>
        
        
   </tbody></table><br/>
