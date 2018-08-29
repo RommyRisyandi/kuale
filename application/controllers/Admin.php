@@ -162,14 +162,13 @@ class admin extends CI_Controller {
 					    select minuman, harga_minuman from tb_minuman');*/
 	}
 	
-	public function porder()
+	public function selesai()
 	{
 
 		$data = array('id_pesanan' => $this->input->post('id_pesanan'),
 					  'no_meja' => $this->input->post('no_meja'),
 					  'tgl_pesan' => $this->input->post('tgl_pesan'),
 					  'total' => $this->input->post('total'));
-		$query = $this->kuale->insert('tb_pesanan', $data);
 		$this->kuale->selesai();
 		redirect('admin/pelayan','refresh');
 	}
@@ -184,7 +183,7 @@ class admin extends CI_Controller {
 
 	public function kasir()
 	{
-		$data['data'] = $this->kuale->selectAll('tb_order') -> 
+		$data['data'] = $this->kuale->selectAll('tb_order')-> 
 		result_object();
 		//$this->load->view('admin/header');
 		$this->load->view('admin/kasir', $data);

@@ -43,17 +43,18 @@ body{
 
         <script type="text/javascript">
  function hitung() {
+   
    var a = $(".harga_satuan").val();
    var b = $(".jml_porsi").val();
    c = a * b;
    $(".subtotal").val(c); 
  }
-function isNumberKey(evt){
+/*function isNumberKey(evt){
   var charCode = (evt.which) ? evt.which : event.keyCode;
   if (charCode != 46 && charCode > 31 && (charCode  < 48 || charCode  > 57))
     return false;
       return true;
-}
+}*/
 //date picker
 
         </script>
@@ -91,6 +92,7 @@ function isNumberKey(evt){
 <div class="grid_12">
   <h3 class="text-center">Tambah Pesanan</h3>
 <form>
+  <?php echo form_open('admin/selesai'); ?>
   <div class="col-xs-12 col-sm-12">
     <table id="example2" class="table table-bordered table-hover table-striped" style="width: 100%">
       <thead>
@@ -107,7 +109,7 @@ foreach ($detail->result() as $row => $r) {
 $total +=$r->subtotal;
 }
 ?>
-<?php echo form_open('admin/porder'); ?>
+
 <td><select name="no_meja" class="form-control">
   <option>Pilih No.Meja</option>
   <option value="1">1</option>
@@ -123,11 +125,10 @@ $total +=$r->subtotal;
 </select></td>
 
 <td><input type="date" name="tgl_order" id="tgl_order"></td>
-<td><input type="text" name="total" class="subtotal_val" value="<?=$total ;?>" readonly></td>
+<td><input type="text" name="total" class="total" value="<?php echo $total ;?>" readonly></td>
 <td><button type="submit" onClick="return confirm('apakah anda sudah selesai menginput menu?')">Selesai</button></td></tr>
-<?php echo form_close(); ?>
 
-<h4></h4>
+
 </tbody></table><br/>
 </div>
 </form>
@@ -215,6 +216,7 @@ $total +=$r->subtotal;
        
        
   </tbody></table><br/>
+  <?php echo form_close(); ?>
 </div>
 </div>
   </div>
